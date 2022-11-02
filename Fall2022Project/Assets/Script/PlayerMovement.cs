@@ -7,11 +7,11 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] GameObject Car;
     [SerializeField] Rigidbody rigid;
-    [SerializeField] float maxSpeed, currentSpeed, accelValue;
+    [SerializeField] float maxSpeed, currentSpeed, accelValue, turnSpeed;
     Vector3 moveValue;
     PlayerControls PC;
-    bool isAccelerating = false;
-
+    bool isAccelerating = false, isTurning = false;
+    float turnDirection;
     private void Awake()
     {
         PC = new PlayerControls();
@@ -28,7 +28,8 @@ public class PlayerMovement : MonoBehaviour
     {
 
         //this.transform.position += moveValue * Time.deltaTime * currentSpeed;
-        this.transform.position += new Vector3(currentSpeed,0f,0f) * Time.deltaTime;
+        rigid.AddRelativeForce(new Vector3(currentSpeed, 0f, 0f) * Time.deltaTime,ForceMode.Impulse);
+        
         if (isAccelerating && currentSpeed < maxSpeed)
         {
             currentSpeed += accelValue;
@@ -37,17 +38,22 @@ public class PlayerMovement : MonoBehaviour
         {
             currentSpeed -= accelValue;
         }
+
+        if (isTurning)
+        {
+            this.transform.Rotate(new Vector3(0f,turnDirection*turnSpeed,0f));
+        }
     }
 
     public void OnMove(InputValue input)
     {
-        Debug.Log("We tried moving the vehicle.");
-        //Add force to the rigidbody in the direction that was pressed.
-       Vector2 movement = input.Get<Vector2>();
-        moveValue = new Vector3(movement.y, 0f, movement.x);
-        this.transform.Rotate(new Vector3(0f,movement.x,0f));
-        Debug.Log($"Movement on X axis is {movement.x}");
-        Debug.Log($"Movement on Y axis is {movement.y}");
+        //Try to turn the vehicle left or right
+        //store input
+        isTurning = true;
+        turnDirection = input.Get<Vector2>().x;
+        //Decide if vehicle should move left/right
+        if (turnDirection == 0)
+            isTurning = false;
     }
     public void OnAccelerate(InputValue button)
     {
@@ -56,4 +62,5 @@ public class PlayerMovement : MonoBehaviour
         else
             isAccelerating = false;
     }
+
 }
