@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float maxSpeed, currentSpeed, accelValue, turnSpeed;
     Vector3 moveValue;
     PlayerControls PC;
-    bool isAccelerating = false, isTurning = false;
+    bool isAccelerating = false, isTurning = false, isBraking = false, isBoosting = false;
     float turnDirection;
     private void Awake()
     {
@@ -27,17 +27,12 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
+        Braking(isBraking);
+        Accelerating(isAccelerating);
         //this.transform.position += moveValue * Time.deltaTime * currentSpeed;
         rigid.AddRelativeForce(new Vector3(currentSpeed, 0f, 0f) * Time.deltaTime,ForceMode.Impulse);
         
-        if (isAccelerating && currentSpeed < maxSpeed)
-        {
-            currentSpeed += accelValue;
-        }
-        else if(currentSpeed > 0)
-        {
-            currentSpeed -= accelValue;
-        }
+        
 
         if (isTurning)
             this.transform.Rotate(new Vector3(0f,turnDirection*turnSpeed,0f));
@@ -61,4 +56,37 @@ public class PlayerMovement : MonoBehaviour
             isAccelerating = false;
     }
 
+    public void OnBrake(InputValue button)
+    {
+        if (button.isPressed)
+            isBraking = true;
+        else
+            isBraking = false;
+    }
+
+    public void OnBoost(InputValue button)
+    {
+        if (button.isPressed)
+            isBoosting = true;
+        else
+            isBoosting = false;
+    }
+
+    private void Braking(bool braking)
+    {
+        if (braking)
+        {
+            currentSpeed -= accelValue;
+        }
+    }
+
+    private void Accelerating(bool accel)
+    {
+        if (accel && currentSpeed < maxSpeed)
+        {
+            currentSpeed += accelValue;
+        }
+        else if (currentSpeed > 0)
+            currentSpeed -= accelValue;
+    }
 }
