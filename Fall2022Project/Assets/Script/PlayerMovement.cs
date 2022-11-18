@@ -40,9 +40,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if (isTurning)
-        {
             this.transform.Rotate(new Vector3(0f,turnDirection*turnSpeed,0f));
-        }
     }
 
     public void OnMove(InputValue input)
