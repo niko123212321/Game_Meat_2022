@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{12b3d2e1-0121-4884-b6c1-78f4fcc8532a}">
+		<property name="assetPath">
+			<value>My_Medly.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>65.541224489795923</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{37ccb01f-f3ae-4de5-92b3-bc12ff578533}</destination>
+		</relationship>
+	</object>
+</objects>
