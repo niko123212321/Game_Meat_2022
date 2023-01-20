@@ -2272,13 +2272,32 @@ PrefabInstance:
       propertyPath: m_Name
       value: point1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2891882469981543653, guid: b3516b9d40247d04e997148841924d23, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b3516b9d40247d04e997148841924d23, type: 3}
 --- !u!4 &1421694256 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2963565172648114529, guid: b3516b9d40247d04e997148841924d23, type: 3}
   m_PrefabInstance: {fileID: 1421694255}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1421694257 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3816723646461527821, guid: b3516b9d40247d04e997148841924d23, type: 3}
+  m_PrefabInstance: {fileID: 1421694255}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1421694258
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421694257}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1465862985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2749,6 +2768,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8677639807282039315, guid: 964688d860a766347962ea30c8c68cfe, type: 3}
   m_PrefabInstance: {fileID: 1765728844}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1846571656
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1846571657}
+  m_Layer: 0
+  m_Name: min
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1846571657
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846571656}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1421694256}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1990303649
 PrefabInstance:
   m_ObjectHideFlags: 0
