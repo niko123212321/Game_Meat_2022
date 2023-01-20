@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{7db5bbfd-3044-4f45-a950-5194c953af72}">
+		<property name="assetPath">
+			<value>1940_Ford_Car_Exterior_Idle_Accelerate_to_Creep_ODY-0024-50.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>33.887999999999998</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{37ccb01f-f3ae-4de5-92b3-bc12ff578533}</destination>
+		</relationship>
+	</object>
+</objects>

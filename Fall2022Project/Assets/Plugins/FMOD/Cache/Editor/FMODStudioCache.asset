@@ -1,6 +1,26 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-6972939161191269112
+--- !u!114 &-8275828649203511623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/DX.bank
+  m_EditorClassIdentifier: 
+  Path: ../GMFmod/Build/Desktop/DX.bank
+  Name: DX
+  StudioPath: bank:/DX
+  lastModified: 638098202764338619
+  FileSizes:
+  - Name: Desktop
+    Value: 854016
+  Exists: 1
+--- !u!114 &-7653510036483627061
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12,15 +32,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: bank:/Karts.bank
   m_EditorClassIdentifier: 
-  Path: ../../../FMOD Studio/GameMeat Racer/Build/Desktop/Karts.bank
+  Path: ../GMFmod/Build/Desktop/Karts.bank
   Name: Karts
   StudioPath: bank:/Karts
-  lastModified: 638098137199654192
+  lastModified: 638098202764528103
   FileSizes:
   - Name: Desktop
-    Value: 494
+    Value: 768192
   Exists: 1
---- !u!114 &-6309591081815721327
+--- !u!114 &-4301215826237884100
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -30,17 +50,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/SFX.bank
+  m_Name: bank:/Master.strings.bank
   m_EditorClassIdentifier: 
-  Path: ../../../FMOD Studio/GameMeat Racer/Build/Desktop/SFX.bank
-  Name: SFX
-  StudioPath: bank:/SFX
-  lastModified: 638098137199624272
+  Path: ../GMFmod/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638098202764577981
   FileSizes:
   - Name: Desktop
-    Value: 494
+    Value: 1076
   Exists: 1
---- !u!114 &-2043428531449717678
+--- !u!114 &-3576319539732089024
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -50,15 +70,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/MUS.bank
+  m_Name: bank:/Master.bank
   m_EditorClassIdentifier: 
-  Path: ../../../FMOD Studio/GameMeat Racer/Build/Desktop/MUS.bank
-  Name: MUS
-  StudioPath: bank:/MUS
-  lastModified: 638098137199733983
+  Path: ../GMFmod/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638098202764548064
   FileSizes:
   - Name: Desktop
-    Value: 494
+    Value: 1036
   Exists: 1
 --- !u!114 &-1882206068530358100
 MonoBehaviour:
@@ -79,7 +99,7 @@ MonoBehaviour:
     Data3: -1673757282
     Data4: -1264302825
   Banks:
-  - {fileID: 2458854233684482327}
+  - {fileID: -8275828649203511623}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -87,26 +107,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 65541
---- !u!114 &-507666651706603389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: ../../../FMOD Studio/GameMeat Racer/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638098137199275548
-  FileSizes:
-  - Name: Desktop
-    Value: 1036
-  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,23 +120,52 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 2515808774532558045}
-  - {fileID: -507666651706603389}
-  - {fileID: 5128483300170908662}
-  - {fileID: 2458854233684482327}
-  - {fileID: -6972939161191269112}
-  - {fileID: -2043428531449717678}
-  - {fileID: -6309591081815721327}
+  - {fileID: -4301215826237884100}
+  - {fileID: 7832803742006245390}
+  - {fileID: -8275828649203511623}
+  - {fileID: -7653510036483627061}
+  - {fileID: -3576319539732089024}
+  - {fileID: 642433145178529616}
+  - {fileID: 5498612269429311140}
   EditorEvents:
   - {fileID: -1882206068530358100}
+  - {fileID: 43324661915867107}
+  - {fileID: 5703343719080090274}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -507666651706603389}
+  - {fileID: -3576319539732089024}
   StringsBanks:
-  - {fileID: 2515808774532558045}
-  cacheTime: 638098137199733983
+  - {fileID: -4301215826237884100}
+  cacheTime: 638098202764607899
   cacheVersion: 131601
---- !u!114 &2458854233684482327
+--- !u!114 &43324661915867107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Vehicles/KartDrive
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Vehicles/KartDrive
+  Guid:
+    Data1: -1516813266
+    Data2: 1322270500
+    Data3: -244913745
+    Data4: -1843258683
+  Banks:
+  - {fileID: -7653510036483627061}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 13500
+--- !u!114 &642433145178529616
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,17 +175,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/DX.bank
+  m_Name: bank:/MUS.bank
   m_EditorClassIdentifier: 
-  Path: ../../../FMOD Studio/GameMeat Racer/Build/Desktop/DX.bank
-  Name: DX
-  StudioPath: bank:/DX
-  lastModified: 638098137199594360
+  Path: ../GMFmod/Build/Desktop/MUS.bank
+  Name: MUS
+  StudioPath: bank:/MUS
+  lastModified: 638098202764597957
   FileSizes:
   - Name: Desktop
-    Value: 853856
+    Value: 494
   Exists: 1
---- !u!114 &2515808774532558045
+--- !u!114 &5498612269429311140
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,17 +195,44 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
+  m_Name: bank:/SFX.bank
   m_EditorClassIdentifier: 
-  Path: ../../../FMOD Studio/GameMeat Racer/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638098137199305126
+  Path: ../GMFmod/Build/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 638098202764607899
   FileSizes:
   - Name: Desktop
-    Value: 958
+    Value: 494
   Exists: 1
---- !u!114 &5128483300170908662
+--- !u!114 &5703343719080090274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Vehicles/KartAccelerate
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Vehicles/KartAccelerate
+  Guid:
+    Data1: 50788671
+    Data2: 1279197390
+    Data3: -406023795
+    Data4: -12792286
+  Banks:
+  - {fileID: -7653510036483627061}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8000
+--- !u!114 &7832803742006245390
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -188,10 +244,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: bank:/BG.bank
   m_EditorClassIdentifier: 
-  Path: ../../../FMOD Studio/GameMeat Racer/Build/Desktop/BG.bank
+  Path: ../GMFmod/Build/Desktop/BG.bank
   Name: BG
   StudioPath: bank:/BG
-  lastModified: 638098137199694084
+  lastModified: 638098202764134122
   FileSizes:
   - Name: Desktop
     Value: 494
