@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{84a101e1-0047-4da5-bf71-ee97b9c19fb3}">
+		<property name="assetPath">
+			<value>1940_Ford_Car_Interior_Drive_Constant_ODY-0024-53-01.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>25.706666666666667</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{37ccb01f-f3ae-4de5-92b3-bc12ff578533}</destination>
+		</relationship>
+	</object>
+</objects>
