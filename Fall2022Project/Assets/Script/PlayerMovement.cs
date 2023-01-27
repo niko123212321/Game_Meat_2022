@@ -13,6 +13,10 @@ public class PlayerMovement : MonoBehaviour
     PlayerControls PC;
     bool isAccelerating = false, isTurning = false, isBraking = false, isBoosting = false;
     float turnDirection;
+
+    //Placeholder spot for these variables.  Place within Canvas script or find better substitute
+    public int currentCheckpoint = -1;
+    public int currentLap = -1;
     private void Awake()
     {
         PC = new PlayerControls();

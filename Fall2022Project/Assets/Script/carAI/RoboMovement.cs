@@ -24,7 +24,7 @@ public class RoboMovement : MonoBehaviour
 
     //New AI code that's needed
     int difficulty = 0;
-    int nextCheckpoint = 1;
+    public int nextCheckpoint = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -75,6 +75,6 @@ public class RoboMovement : MonoBehaviour
 
     void MoveToCheckpoint()
     {
-       // agent.Move(checkpoints[nextCheckpoint + 1])
+       // agent.Move(checkpoints[nextCheckpoint])
     }
 }
