@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: ../GMFmod/Build/Desktop/DX.bank
   Name: DX
   StudioPath: bank:/DX
-  lastModified: 638098202764338619
+  lastModified: 638108013602847124
   FileSizes:
   - Name: Desktop
-    Value: 854016
+    Value: 854144
   Exists: 1
 --- !u!114 &-7653510036483627061
 MonoBehaviour:
@@ -35,10 +35,34 @@ MonoBehaviour:
   Path: ../GMFmod/Build/Desktop/Karts.bank
   Name: Karts
   StudioPath: bank:/Karts
-  lastModified: 638098202764528103
+  lastModified: 638108013602877069
   FileSizes:
   - Name: Desktop
-    Value: 768192
+    Value: 494
+  Exists: 1
+--- !u!114 &-7056822480902734670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/KartEngine/RPM
+  m_EditorClassIdentifier: 
+  Name: RPM
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3156884626
+    data2: 3199636304
+  Type: 0
+  IsGlobal: 0
+  Labels: []
   Exists: 1
 --- !u!114 &-4301215826237884100
 MonoBehaviour:
@@ -55,10 +79,10 @@ MonoBehaviour:
   Path: ../GMFmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638098202764577981
+  lastModified: 638108013602946937
   FileSizes:
   - Name: Desktop
-    Value: 1076
+    Value: 1122
   Exists: 1
 --- !u!114 &-3576319539732089024
 MonoBehaviour:
@@ -75,11 +99,40 @@ MonoBehaviour:
   Path: ../GMFmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638098202764548064
+  lastModified: 638108013602916934
   FileSizes:
   - Name: Desktop
-    Value: 1036
+    Value: 2266
   Exists: 1
+--- !u!114 &-2133312394699880877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Vehicles/KartEngine
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Vehicles/KartEngine
+  Guid:
+    Data1: -1929729387
+    Data2: 1332157864
+    Data3: 1921587841
+    Data4: -780091309
+  Banks:
+  - {fileID: -3576319539732089024}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 4089041194815586356}
+  - {fileID: -7056822480902734670}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-1882206068530358100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,7 +159,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 65541
+  Length: 54000
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,42 +182,14 @@ MonoBehaviour:
   - {fileID: 5498612269429311140}
   EditorEvents:
   - {fileID: -1882206068530358100}
-  - {fileID: 43324661915867107}
-  - {fileID: 5703343719080090274}
+  - {fileID: -2133312394699880877}
   EditorParameters: []
   MasterBanks:
   - {fileID: -3576319539732089024}
   StringsBanks:
   - {fileID: -4301215826237884100}
-  cacheTime: 638098202764607899
+  cacheTime: 638108013603026665
   cacheVersion: 131601
---- !u!114 &43324661915867107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Vehicles/KartDrive
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Vehicles/KartDrive
-  Guid:
-    Data1: -1516813266
-    Data2: 1322270500
-    Data3: -244913745
-    Data4: -1843258683
-  Banks:
-  - {fileID: -7653510036483627061}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 13500
 --- !u!114 &642433145178529616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,10 +205,34 @@ MonoBehaviour:
   Path: ../GMFmod/Build/Desktop/MUS.bank
   Name: MUS
   StudioPath: bank:/MUS
-  lastModified: 638098202764597957
+  lastModified: 638108013602986779
   FileSizes:
   - Name: Desktop
     Value: 494
+  Exists: 1
+--- !u!114 &4089041194815586356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/KartEngine/Accelerate
+  m_EditorClassIdentifier: 
+  Name: Accelerate
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2708952655
+    data2: 4042419177
+  Type: 0
+  IsGlobal: 0
+  Labels: []
   Exists: 1
 --- !u!114 &5498612269429311140
 MonoBehaviour:
@@ -200,38 +249,11 @@ MonoBehaviour:
   Path: ../GMFmod/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638098202764607899
+  lastModified: 638108013603026665
   FileSizes:
   - Name: Desktop
     Value: 494
   Exists: 1
---- !u!114 &5703343719080090274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Vehicles/KartAccelerate
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Vehicles/KartAccelerate
-  Guid:
-    Data1: 50788671
-    Data2: 1279197390
-    Data3: -406023795
-    Data4: -12792286
-  Banks:
-  - {fileID: -7653510036483627061}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 8000
 --- !u!114 &7832803742006245390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,7 +269,7 @@ MonoBehaviour:
   Path: ../GMFmod/Build/Desktop/BG.bank
   Name: BG
   StudioPath: bank:/BG
-  lastModified: 638098202764134122
+  lastModified: 638108013602448395
   FileSizes:
   - Name: Desktop
     Value: 494
