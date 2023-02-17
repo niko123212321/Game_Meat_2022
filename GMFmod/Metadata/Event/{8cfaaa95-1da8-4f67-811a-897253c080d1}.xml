@@ -2,10 +2,17 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{8cfaaa95-1da8-4f67-811a-897253c080d1}">
 		<property name="name">
+<<<<<<< Updated upstream
 			<value>KartEngine</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
+=======
+			<value>Kart Engine</value>
+		</property>
+		<property name="outputFormat">
+			<value>1</value>
+>>>>>>> Stashed changes
 		</property>
 		<relationship name="folder">
 			<destination>{97a91e21-9bc1-4f69-b175-83e533fdac42}</destination>
@@ -64,6 +71,12 @@
 	<object class="EventAutomatableProperties" id="{0e5918dc-4977-4b78-a25a-4f01a84b6916}" />
 	<object class="MarkerTrack" id="{caa04db3-7b4c-4ffd-bde5-eaf6229a1aad}" />
 	<object class="GroupTrack" id="{4553c54a-9e6a-4fe3-81a6-c64b9abedbd8}">
+<<<<<<< Updated upstream
+=======
+		<relationship name="modules">
+			<destination>{862a9300-9cb6-4582-b011-2f9ad66ee113}</destination>
+		</relationship>
+>>>>>>> Stashed changes
 		<relationship name="mixerGroup">
 			<destination>{f11108a4-db9b-463e-9614-2af21c8d62e9}</destination>
 		</relationship>
@@ -75,6 +88,12 @@
 	</object>
 	<object class="Timeline" id="{a7117105-cf86-4c6a-9714-a6ace15d0e95}" />
 	<object class="ParameterProxy" id="{c8fc0936-4cbe-400a-a6e8-f3972d8843fe}">
+<<<<<<< Updated upstream
+=======
+		<relationship name="modules">
+			<destination>{862a9300-9cb6-4582-b011-2f9ad66ee113}</destination>
+		</relationship>
+>>>>>>> Stashed changes
 		<relationship name="preset">
 			<destination>{8b9c07c3-e7ad-4851-b27b-994fdaf96e11}</destination>
 		</relationship>
@@ -101,6 +120,17 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{2b4a60e8-f726-4336-b35d-b214f2080f4d}" />
+<<<<<<< Updated upstream
+=======
+	<object class="SingleSound" id="{862a9300-9cb6-4582-b011-2f9ad66ee113}">
+		<property name="length">
+			<value>0.20000000000000001</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{a6187ab5-29a6-43b9-acc9-da34bbed56a0}</destination>
+		</relationship>
+	</object>
+>>>>>>> Stashed changes
 	<object class="EventMixerGroup" id="{f11108a4-db9b-463e-9614-2af21c8d62e9}">
 		<property name="name">
 			<value>Accel</value>
