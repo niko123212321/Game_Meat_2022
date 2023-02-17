@@ -1,6 +1,53 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8275828649203511623
+--- !u!114 &-7509698439205737494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/BG.bank
+  m_EditorClassIdentifier: 
+  Path: ../GMFmod/Build/Desktop/BG.bank
+  Name: BG
+  StudioPath: bank:/BG
+  lastModified: 638109308803754628
+  FileSizes:
+  - Name: Desktop
+    Value: 494
+  Exists: 1
+--- !u!114 &-6501494915400721611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Temp/MUS_BGTemp
+  m_EditorClassIdentifier: 
+  Path: event:/Temp/MUS_BGTemp
+  Guid:
+    Data1: 1921961008
+    Data2: 1267736929
+    Data3: -1673757282
+    Data4: -1264302825
+  Banks:
+  - {fileID: -4354132279999222104}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 54000
+--- !u!114 &-4354132279999222104
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15,16 +62,12 @@ MonoBehaviour:
   Path: ../GMFmod/Build/Desktop/DX.bank
   Name: DX
   StudioPath: bank:/DX
-<<<<<<< Updated upstream
-  lastModified: 638108013602847124
-=======
-  lastModified: 638113669729642826
->>>>>>> Stashed changes
+  lastModified: 638122327537315422
   FileSizes:
   - Name: Desktop
     Value: 854144
   Exists: 1
---- !u!114 &-7653510036483627061
+--- !u!114 &-2564767900797095141
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -34,21 +77,37 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Karts.bank
+  m_Name: bank:/Master.bank
   m_EditorClassIdentifier: 
-  Path: ../GMFmod/Build/Desktop/Karts.bank
-  Name: Karts
-  StudioPath: bank:/Karts
-<<<<<<< Updated upstream
-  lastModified: 638108013602877069
-=======
-  lastModified: 638113669730071678
->>>>>>> Stashed changes
+  Path: ../GMFmod/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638122327537335149
   FileSizes:
   - Name: Desktop
-    Value: 494
+    Value: 2266
   Exists: 1
---- !u!114 &-7056822480902734670
+--- !u!114 &-2523148991511449120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../GMFmod/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638122327537335149
+  FileSizes:
+  - Name: Desktop
+    Value: 1122
+  Exists: 1
+--- !u!114 &-1901777118075902681
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -72,7 +131,37 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-4301215826237884100
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: -2523148991511449120}
+  - {fileID: -7509698439205737494}
+  - {fileID: -4354132279999222104}
+  - {fileID: 4912581747706835297}
+  - {fileID: -2564767900797095141}
+  - {fileID: 604613659331550502}
+  - {fileID: 5171785458015580539}
+  EditorEvents:
+  - {fileID: -6501494915400721611}
+  - {fileID: 8389254310413106550}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: -2564767900797095141}
+  StringsBanks:
+  - {fileID: -2523148991511449120}
+  cacheTime: 638122327537335149
+  cacheVersion: 131601
+--- !u!114 &604613659331550502
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -82,21 +171,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
+  m_Name: bank:/MUS.bank
   m_EditorClassIdentifier: 
-  Path: ../GMFmod/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-<<<<<<< Updated upstream
-  lastModified: 638108013602946937
-=======
-  lastModified: 638113669730191359
->>>>>>> Stashed changes
+  Path: ../GMFmod/Build/Desktop/MUS.bank
+  Name: MUS
+  StudioPath: bank:/MUS
+  lastModified: 638109308804093718
   FileSizes:
   - Name: Desktop
-    Value: 1122
+    Value: 494
   Exists: 1
---- !u!114 &-3576319539732089024
+--- !u!114 &4912581747706835297
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,21 +191,61 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
+  m_Name: bank:/Karts.bank
   m_EditorClassIdentifier: 
-  Path: ../GMFmod/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-<<<<<<< Updated upstream
-  lastModified: 638108013602916934
-=======
-  lastModified: 638113669730141496
->>>>>>> Stashed changes
+  Path: ../GMFmod/Build/Desktop/Karts.bank
+  Name: Karts
+  StudioPath: bank:/Karts
+  lastModified: 638122327537325187
   FileSizes:
   - Name: Desktop
-    Value: 2266
+    Value: 494
   Exists: 1
---- !u!114 &-2133312394699880877
+--- !u!114 &5171785458015580539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: ../GMFmod/Build/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 638109308804103714
+  FileSizes:
+  - Name: Desktop
+    Value: 494
+  Exists: 1
+--- !u!114 &6438263823764648710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/KartEngine/Accelerate
+  m_EditorClassIdentifier: 
+  Name: Accelerate
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2708952655
+    data2: 4042419177
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &8389254310413106550
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,176 +264,13 @@ MonoBehaviour:
     Data3: 1921587841
     Data4: -780091309
   Banks:
-  - {fileID: -3576319539732089024}
+  - {fileID: -2564767900797095141}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 4089041194815586356}
-  - {fileID: -7056822480902734670}
+  - {fileID: 6438263823764648710}
+  - {fileID: -1901777118075902681}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-1882206068530358100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Temp/MUS_BGTemp
-  m_EditorClassIdentifier: 
-  Path: event:/Temp/MUS_BGTemp
-  Guid:
-    Data1: 1921961008
-    Data2: 1267736929
-    Data3: -1673757282
-    Data4: -1264302825
-  Banks:
-  - {fileID: -8275828649203511623}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 54000
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: -4301215826237884100}
-  - {fileID: 7832803742006245390}
-  - {fileID: -8275828649203511623}
-  - {fileID: -7653510036483627061}
-  - {fileID: -3576319539732089024}
-  - {fileID: 642433145178529616}
-  - {fileID: 5498612269429311140}
-  EditorEvents:
-  - {fileID: -1882206068530358100}
-  - {fileID: -2133312394699880877}
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: -3576319539732089024}
-  StringsBanks:
-  - {fileID: -4301215826237884100}
-<<<<<<< Updated upstream
-  cacheTime: 638108013603026665
-=======
-  cacheTime: 638113669730191359
->>>>>>> Stashed changes
-  cacheVersion: 131601
---- !u!114 &642433145178529616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/MUS.bank
-  m_EditorClassIdentifier: 
-  Path: ../GMFmod/Build/Desktop/MUS.bank
-  Name: MUS
-  StudioPath: bank:/MUS
-<<<<<<< Updated upstream
-  lastModified: 638108013602986779
-=======
-  lastModified: 638109308804093718
->>>>>>> Stashed changes
-  FileSizes:
-  - Name: Desktop
-    Value: 494
-  Exists: 1
---- !u!114 &4089041194815586356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/KartEngine/Accelerate
-  m_EditorClassIdentifier: 
-<<<<<<< Updated upstream
-  Name: Accelerate
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 2708952655
-    data2: 4042419177
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-=======
-  Path: ../GMFmod/Build/Desktop/SFX.bank
-  Name: SFX
-  StudioPath: bank:/SFX
-  lastModified: 638109308804103714
-  FileSizes:
-  - Name: Desktop
-    Value: 494
->>>>>>> Stashed changes
-  Exists: 1
---- !u!114 &5498612269429311140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/SFX.bank
-  m_EditorClassIdentifier: 
-  Path: ../GMFmod/Build/Desktop/SFX.bank
-  Name: SFX
-  StudioPath: bank:/SFX
-  lastModified: 638108013603026665
-  FileSizes:
-  - Name: Desktop
-    Value: 494
-  Exists: 1
---- !u!114 &7832803742006245390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/BG.bank
-  m_EditorClassIdentifier: 
-  Path: ../GMFmod/Build/Desktop/BG.bank
-  Name: BG
-  StudioPath: bank:/BG
-<<<<<<< Updated upstream
-  lastModified: 638108013602448395
-=======
-  lastModified: 638109308803754628
->>>>>>> Stashed changes
-  FileSizes:
-  - Name: Desktop
-    Value: 494
-  Exists: 1
