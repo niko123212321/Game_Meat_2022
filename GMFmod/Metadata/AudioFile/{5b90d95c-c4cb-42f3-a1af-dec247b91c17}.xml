@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{5b90d95c-c4cb-42f3-a1af-dec247b91c17}">
+		<property name="assetPath">
+			<value>VEHUtil_Go Kart Exhaust Constant_PSE_OE_k7bJ4.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>117.79000000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{37ccb01f-f3ae-4de5-92b3-bc12ff578533}</destination>
+		</relationship>
+	</object>
+</objects>

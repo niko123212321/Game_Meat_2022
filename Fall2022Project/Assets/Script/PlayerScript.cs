@@ -50,13 +50,23 @@ public class PlayerScript : MonoBehaviour
     public Transform boostFire;
     public Transform boostExplosion;
 
-
+    //fmod stuff   
+    private FMOD.Studio.EventInstance instance;
+    public FMODUnity.EventReference fmodEvent;
+    [SerializeField]
+    [Range(0f, 1f)]
+    private float accelInput;
+    [SerializeField]
+    [Range(0f, 100f)]
+    private float speed;
 
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
+        instance.start(); 
     }
 
     // Update is called once per frame
@@ -73,18 +83,23 @@ public class PlayerScript : MonoBehaviour
 
     private void move()
     {
+        instance.setParameterByName("Speed", Mathf.Abs(CurrentSpeed));
+        instance.setParameterByName("AccelInput", accelInput); 
         RealSpeed = transform.InverseTransformDirection(rb.velocity).z; //real velocity before setting the value. This can be useful if say you want to have hair moving on the player, but don't want it to move if you are accelerating into a wall, since checking velocity after it has been applied will always be the applied value, and not real
 
         if (Input.GetKey(KeyCode.Space))
         {
+            accelInput = 1; 
             CurrentSpeed = Mathf.Lerp(CurrentSpeed, MaxSpeed, Time.deltaTime * 0.5f); //speed
         }
         else if (Input.GetKey(KeyCode.S))
         {
+            accelInput = 1; 
             CurrentSpeed = Mathf.Lerp(CurrentSpeed, -MaxSpeed / 1.75f, 1f * Time.deltaTime);
         }
         else
         {
+            accelInput = 0; 
             CurrentSpeed = Mathf.Lerp(CurrentSpeed, 0, Time.deltaTime * 1.5f); //speed
         }
 

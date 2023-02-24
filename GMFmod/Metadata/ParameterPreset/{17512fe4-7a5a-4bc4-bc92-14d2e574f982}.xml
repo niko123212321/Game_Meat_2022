@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="ParameterPreset" id="{17512fe4-7a5a-4bc4-bc92-14d2e574f982}">
 		<property name="name">
-			<value>Accelerate</value>
+			<value>AccelInput</value>
 		</property>
 		<relationship name="folder">
 			<destination>{93ed665a-b25a-44b9-8d53-ca8c98879704}</destination>
@@ -14,6 +14,12 @@
 	<object class="GameParameter" id="{45d762da-4d7d-400c-acd9-def381602204}">
 		<property name="initialValue">
 			<value>0</value>
+		</property>
+		<property name="velocity">
+			<value>0.019999999552965164</value>
+		</property>
+		<property name="seekSpeed">
+			<value>0.98999994993209839</value>
 		</property>
 	</object>
 </objects>

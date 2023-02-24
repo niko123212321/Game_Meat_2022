@@ -157,10 +157,10 @@ MonoBehaviour:
   boostSpeed: 20
   GLIDER_FLY: 0
   gliderAnim: {fileID: 0}
-  frontLeftTire: {fileID: 4747362435639152019}
-  frontRightTire: {fileID: 4747362436399809032}
-  backLeftTire: {fileID: 4747362435818184859}
-  backRightTire: {fileID: 4747362436574374216}
+  frontLeftTire: {fileID: 4747362436758623099}
+  frontRightTire: {fileID: 4747362436288360556}
+  backLeftTire: {fileID: 4747362435649914120}
+  backRightTire: {fileID: 4747362436977855012}
   isSliding: 0
   leftDrift: {fileID: 0}
   rightDrift: {fileID: 0}
@@ -505,28 +505,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23de8447a73b5c44ba4f5c29d6fa5bab, type: 3}
---- !u!4 &4747362435639152019 stripped
+--- !u!4 &4747362435649914120 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 8328057403757184123, guid: 23de8447a73b5c44ba4f5c29d6fa5bab, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8328057403769490656, guid: 23de8447a73b5c44ba4f5c29d6fa5bab, type: 3}
   m_PrefabInstance: {fileID: 3634740173969574376}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &4747362435818184859 stripped
+--- !u!4 &4747362436288360556 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 8328057403668277619, guid: 23de8447a73b5c44ba4f5c29d6fa5bab, type: 3}
-  m_PrefabInstance: {fileID: 3634740173969574376}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &4747362436399809032 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8328057402916637664, guid: 23de8447a73b5c44ba4f5c29d6fa5bab, type: 3}
-  m_PrefabInstance: {fileID: 3634740173969574376}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &4747362436574374216 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8328057404969197728, guid: 23de8447a73b5c44ba4f5c29d6fa5bab, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8328057403074181508, guid: 23de8447a73b5c44ba4f5c29d6fa5bab, type: 3}
   m_PrefabInstance: {fileID: 3634740173969574376}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &4747362436612356618 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8328057404998792162, guid: 23de8447a73b5c44ba4f5c29d6fa5bab, type: 3}
+  m_PrefabInstance: {fileID: 3634740173969574376}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4747362436758623099 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8328057404886063763, guid: 23de8447a73b5c44ba4f5c29d6fa5bab, type: 3}
+  m_PrefabInstance: {fileID: 3634740173969574376}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4747362436977855012 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8328057404567929804, guid: 23de8447a73b5c44ba4f5c29d6fa5bab, type: 3}
   m_PrefabInstance: {fileID: 3634740173969574376}
   m_PrefabAsset: {fileID: 0}
