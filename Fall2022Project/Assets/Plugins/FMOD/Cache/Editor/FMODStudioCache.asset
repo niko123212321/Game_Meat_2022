@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: ../GMFmod/Build/Desktop/BG.bank
   Name: BG
   StudioPath: bank:/BG
-  lastModified: 638128387565333333
+  lastModified: 638098148730306812
   FileSizes:
   - Name: Desktop
     Value: 494
@@ -169,7 +169,7 @@ MonoBehaviour:
   Path: ../GMFmod/Build/Desktop/DX.bank
   Name: DX
   StudioPath: bank:/DX
-  lastModified: 638128387565522776
+  lastModified: 638128369729396510
   FileSizes:
   - Name: Desktop
     Value: 854144
@@ -189,7 +189,7 @@ MonoBehaviour:
   Path: ../GMFmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638128387565792048
+  lastModified: 638128389717454162
   FileSizes:
   - Name: Desktop
     Value: 980224
@@ -209,7 +209,7 @@ MonoBehaviour:
   Path: ../GMFmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638128387565812144
+  lastModified: 638128389717512771
   FileSizes:
   - Name: Desktop
     Value: 1436
@@ -249,7 +249,7 @@ MonoBehaviour:
   - {fileID: -2564767900797095141}
   StringsBanks:
   - {fileID: -2523148991511449120}
-  cacheTime: 638128387565831935
+  cacheTime: 638128389717512771
   cacheVersion: 131601
 --- !u!114 &199425972823885028
 MonoBehaviour:
@@ -290,7 +290,7 @@ MonoBehaviour:
   Path: ../GMFmod/Build/Desktop/MUS.bank
   Name: MUS
   StudioPath: bank:/MUS
-  lastModified: 638128387565821962
+  lastModified: 638098148730385061
   FileSizes:
   - Name: Desktop
     Value: 494
@@ -310,7 +310,7 @@ MonoBehaviour:
   Path: ../GMFmod/Build/Desktop/Karts.bank
   Name: Karts
   StudioPath: bank:/Karts
-  lastModified: 638128387565542711
+  lastModified: 638128369729406464
   FileSizes:
   - Name: Desktop
     Value: 494
@@ -357,7 +357,7 @@ MonoBehaviour:
   Path: ../GMFmod/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638128387565831935
+  lastModified: 638098148730405023
   FileSizes:
   - Name: Desktop
     Value: 494

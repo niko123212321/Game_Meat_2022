@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class PlayerScript : MonoBehaviour
 {
     private Rigidbody rb;
 
-
+    [SerializeField]
     private float CurrentSpeed = 0;
     public float MaxSpeed;
     public float boostSpeed;
@@ -60,7 +61,7 @@ public class PlayerScript : MonoBehaviour
     [Range(0f, 100f)]
     private float speed;
 
-
+    bool isAccel, isBrake;
     // Start is called before the first frame update
     void Start()
     {
@@ -73,12 +74,13 @@ public class PlayerScript : MonoBehaviour
     void FixedUpdate()
     {
         move();
-        tireSteer();
-        steer();
+       tireSteer();
+       // steer();
+        /*
         groundNormalRotation();
         drift();
         boosts();
-
+       */
     }
 
     private void move()
@@ -87,12 +89,12 @@ public class PlayerScript : MonoBehaviour
         instance.setParameterByName("AccelInput", accelInput); 
         RealSpeed = transform.InverseTransformDirection(rb.velocity).z; //real velocity before setting the value. This can be useful if say you want to have hair moving on the player, but don't want it to move if you are accelerating into a wall, since checking velocity after it has been applied will always be the applied value, and not real
 
-        if (Input.GetKey(KeyCode.Space))
+        if (isAccel)
         {
             accelInput = 1; 
             CurrentSpeed = Mathf.Lerp(CurrentSpeed, MaxSpeed, Time.deltaTime * 0.5f); //speed
         }
-        else if (Input.GetKey(KeyCode.S))
+        else if (isBrake)
         {
             accelInput = 1; 
             CurrentSpeed = Mathf.Lerp(CurrentSpeed, -MaxSpeed / 1.75f, 1f * Time.deltaTime);
@@ -103,24 +105,33 @@ public class PlayerScript : MonoBehaviour
             CurrentSpeed = Mathf.Lerp(CurrentSpeed, 0, Time.deltaTime * 1.5f); //speed
         }
 
-        if (!GLIDER_FLY)
-        {
-            Vector3 vel = transform.forward * CurrentSpeed;
-            vel.y = rb.velocity.y; //gravity
-            rb.velocity = vel;
-        }
+        Vector3 vel = transform.forward * CurrentSpeed;
+        vel.y = rb.velocity.y;
+        rb.velocity = vel;
+
+    }
+
+    private void OnAccelerate(InputValue input)
+    {
+        if (input.isPressed)
+            isAccel = true;
         else
-        {
-            Vector3 vel = transform.forward * CurrentSpeed;
-            vel.y = rb.velocity.y * 0.6f; //gravity with gliding
-            rb.velocity = vel;
-        }
-
-
+            isAccel = false;
+    }
+    private void OnBrake(InputValue input)
+    {
+        if (input.isPressed)
+            isBrake = true;
+        else
+            isBrake = false;
+    }
+    private void OnMove(InputValue input)
+    {
+        steerDirection = input.Get<Vector2>().x;
     }
     private void steer()
     {
-        steerDirection = Input.GetAxisRaw("Horizontal"); // -1, 0, 1
+ 
         Vector3 steerDirVect; //this is used for the final rotation of the kart for steering
 
         float steerAmount;
@@ -361,60 +372,46 @@ public class PlayerScript : MonoBehaviour
 
     private void tireSteer()
     {
-        if (Input.GetKey(KeyCode.LeftArrow))
+        
+        if (steerDirection < 0)
         {
-            frontLeftTire.localEulerAngles = Vector3.Lerp(frontLeftTire.localEulerAngles, new Vector3(0, 155, 0), 5 * Time.deltaTime);
-            frontRightTire.localEulerAngles = Vector3.Lerp(frontLeftTire.localEulerAngles, new Vector3(0, 155, 0), 5 * Time.deltaTime);
+           frontLeftTire.localEulerAngles = Vector3.Lerp(frontLeftTire.localEulerAngles, new Vector3(0, 155, 900), 5 * Time.deltaTime);
+           frontRightTire.localEulerAngles = Vector3.Lerp(frontLeftTire.localEulerAngles, new Vector3(frontRightTire.localEulerAngles.x, 155, 900), 5 * Time.deltaTime);
         }
-        else if (Input.GetKey(KeyCode.RightArrow))
+        else if (steerDirection > 0)
         {
-            frontLeftTire.localEulerAngles = Vector3.Lerp(frontLeftTire.localEulerAngles, new Vector3(0, 205, 0), 5 * Time.deltaTime);
-            frontRightTire.localEulerAngles = Vector3.Lerp(frontLeftTire.localEulerAngles, new Vector3(0, 205, 0), 5 * Time.deltaTime);
+            frontLeftTire.localEulerAngles = Vector3.Lerp(frontLeftTire.localEulerAngles, new Vector3(0, 205, 900), 5 * Time.deltaTime);
+            frontRightTire.localEulerAngles = Vector3.Lerp(frontLeftTire.localEulerAngles, new Vector3(0, 205, 900), 5 * Time.deltaTime);
         }
+        
         else
         {
-            frontLeftTire.localEulerAngles = Vector3.Lerp(frontLeftTire.localEulerAngles, new Vector3(0, 180, 0), 5 * Time.deltaTime);
-            frontRightTire.localEulerAngles = Vector3.Lerp(frontLeftTire.localEulerAngles, new Vector3(0, 180, 0), 5 * Time.deltaTime);
+            frontLeftTire.localEulerAngles = Vector3.Lerp(frontLeftTire.localEulerAngles, new Vector3(0, 180, 900), 5 * Time.deltaTime);
+            frontRightTire.localEulerAngles = Vector3.Lerp(frontRightTire.localEulerAngles, new Vector3(frontRightTire.localEulerAngles.x, 180, frontRightTire.localEulerAngles.z), 5 * Time.deltaTime);
         }
+        
 
         //tire spinning
-
+        /*
         if (CurrentSpeed > 30)
         {
-            frontLeftTire.GetChild(0).Rotate(-90 * Time.deltaTime * CurrentSpeed * 0.5f, 0, 0);
-            frontRightTire.GetChild(0).Rotate(-90 * Time.deltaTime * CurrentSpeed * 0.5f, 0, 0);
-            backLeftTire.Rotate(90 * Time.deltaTime * CurrentSpeed * 0.5f, 0, 0);
-            backRightTire.Rotate(90 * Time.deltaTime * CurrentSpeed * 0.5f, 0, 0);
+           frontLeftTire.GetChild(0).Rotate(-90 * Time.deltaTime * CurrentSpeed * 0.5f, 0, 0);
+          // frontRightTire.GetChild(0).Rotate(-90 * Time.deltaTime * CurrentSpeed * 0.5f, 0, 0);
+        //   backLeftTire.Rotate(90 * Time.deltaTime * CurrentSpeed * 0.5f, 0, 0);
+         //  backRightTire.Rotate(90 * Time.deltaTime * CurrentSpeed * 0.5f, 0, 0);
         }
         else
         {
-            frontLeftTire.GetChild(0).Rotate(-90 * Time.deltaTime * RealSpeed * 0.5f, 0, 0);
-            frontRightTire.GetChild(0).Rotate(-90 * Time.deltaTime * RealSpeed * 0.5f, 0, 0);
-            backLeftTire.Rotate(90 * Time.deltaTime * RealSpeed * 0.5f, 0, 0);
-            backRightTire.Rotate(90 * Time.deltaTime * RealSpeed * 0.5f, 0, 0);
+           // frontLeftTire.GetChild(0).Rotate(-90 * Time.deltaTime * RealSpeed * 0.5f, 0, 0);
+            frontLeftTire.GetChild(0).Rotate(0, -90 * Time.deltaTime * RealSpeed * 0.5f, transform.rotation.z);
+            //frontRightTire.GetChild(0).Rotate(-90 * Time.deltaTime * RealSpeed * 0.5f, 0, 0);
+            //backLeftTire.Rotate(90 * Time.deltaTime * RealSpeed * 0.5f, 0, 0);
+            //backRightTire.Rotate(90 * Time.deltaTime * RealSpeed * 0.5f, 0, 0);
         }
-
+        */
 
 
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "GliderPanel")
-        {
-            GLIDER_FLY = true;
-            gliderAnim.SetBool("GliderOpen", true);
-            gliderAnim.SetBool("GliderClose", false);
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "OffRoad")
-        {
-            GLIDER_FLY = false;
-            gliderAnim.SetBool("GliderOpen", false);
-            gliderAnim.SetBool("GliderClose", true);
-        }
-    }
+    
 }
