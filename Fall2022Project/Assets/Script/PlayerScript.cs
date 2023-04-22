@@ -67,17 +67,17 @@ public class PlayerScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
-        instance.start(); 
+        instance.start();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         move();
-       tireSteer();
-       steer();
-        /*
+        tireSteer();
+        steer();
         groundNormalRotation();
+       /*
         drift();
         boosts();
        */
@@ -86,22 +86,22 @@ public class PlayerScript : MonoBehaviour
     private void move()
     {
         instance.setParameterByName("Speed", Mathf.Abs(CurrentSpeed));
-        instance.setParameterByName("AccelInput", accelInput); 
+        instance.setParameterByName("AccelInput", accelInput);
         RealSpeed = transform.InverseTransformDirection(rb.velocity).z; //real velocity before setting the value. This can be useful if say you want to have hair moving on the player, but don't want it to move if you are accelerating into a wall, since checking velocity after it has been applied will always be the applied value, and not real
 
         if (isAccel)
         {
-            accelInput = 1; 
+            accelInput = 1;
             CurrentSpeed = Mathf.Lerp(CurrentSpeed, MaxSpeed, Time.deltaTime * 0.5f); //speed
         }
         else if (isBrake)
         {
-            accelInput = 1; 
+            accelInput = 1;
             CurrentSpeed = Mathf.Lerp(CurrentSpeed, -MaxSpeed / 1.75f, 1f * Time.deltaTime);
         }
         else
         {
-            accelInput = 0; 
+            accelInput = 0;
             CurrentSpeed = Mathf.Lerp(CurrentSpeed, 0, Time.deltaTime * 1.5f); //speed
         }
 
@@ -131,79 +131,44 @@ public class PlayerScript : MonoBehaviour
     }
     private void steer()
     {
- 
+
         Vector3 steerDirVect; //this is used for the final rotation of the kart for steering
 
         float steerAmount;
 
 
-        if (driftLeft && !driftRight)
-        {
-            steerDirection = Input.GetAxis("Horizontal") < 0 ? -1.5f : -0.5f;
-            transform.GetChild(0).localRotation = Quaternion.Lerp(transform.GetChild(0).localRotation, Quaternion.Euler(0, -20f, 0), 8f * Time.deltaTime);
+        /*    if (driftLeft && !driftRight)
+            {
+                steerDirection = Input.GetAxis("Horizontal") < 0 ? -1.5f : -0.5f;
+                transform.GetChild(0).localRotation = Quaternion.Lerp(transform.GetChild(0).localRotation, Quaternion.Euler(0, -20f, 0), 8f * Time.deltaTime);
 
 
-            if (isSliding && touchingGround)
-                rb.AddForce(transform.right * outwardsDriftForce * Time.deltaTime, ForceMode.Acceleration);
-        }
-        else if (driftRight && !driftLeft)
-        {
-            steerDirection = Input.GetAxis("Horizontal") > 0 ? 1.5f : 0.5f;
-            transform.GetChild(0).localRotation = Quaternion.Lerp(transform.GetChild(0).localRotation, Quaternion.Euler(0, 20f, 0), 8f * Time.deltaTime);
+                if (isSliding && touchingGround)
+                    rb.AddForce(transform.right * outwardsDriftForce * Time.deltaTime, ForceMode.Acceleration);
+            }
+            else if (driftRight && !driftLeft)
+            {
+                steerDirection = Input.GetAxis("Horizontal") > 0 ? 1.5f : 0.5f;
+                transform.GetChild(0).localRotation = Quaternion.Lerp(transform.GetChild(0).localRotation, Quaternion.Euler(0, 20f, 0), 8f * Time.deltaTime);
 
-            if (isSliding && touchingGround)
-                rb.AddForce(transform.right * -outwardsDriftForce * Time.deltaTime, ForceMode.Acceleration);
-        }
-        else
-        {
-            transform.GetChild(0).localRotation = Quaternion.Lerp(transform.GetChild(0).localRotation, Quaternion.Euler(0, 0f, 0), 8f * Time.deltaTime);
-        }
+                if (isSliding && touchingGround)
+                    rb.AddForce(transform.right * -outwardsDriftForce * Time.deltaTime, ForceMode.Acceleration);
+            }
+            else
+            {
+                transform.GetChild(0).localRotation = Quaternion.Lerp(transform.GetChild(0).localRotation, Quaternion.Euler(0, 0f, 0), 8f * Time.deltaTime);
+            }
+    */
+        transform.GetChild(0).localRotation = Quaternion.Lerp(transform.GetChild(0).localRotation, Quaternion.Euler(0, 0f, 0), 8f * Time.deltaTime);
 
         //since handling is supposed to be stronger when car is moving slower, we adjust steerAmount depending on the real speed of the kart, and then rotate the kart on its y axis with steerAmount
         steerAmount = RealSpeed > 30 ? RealSpeed / 4 * steerDirection : steerAmount = RealSpeed / 1.5f * steerDirection;
 
 
 
-        //glider movements
+        transform.rotation = Quaternion.SlerpUnclamped(transform.rotation, Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, 0), 2 * Time.deltaTime);
 
-        if (Input.GetKey(KeyCode.LeftArrow) && GLIDER_FLY)  //left
-        {
-            transform.rotation = Quaternion.SlerpUnclamped(transform.rotation, Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, 40), 2 * Time.deltaTime);
-        } // left 
-        else if (Input.GetKey(KeyCode.RightArrow) && GLIDER_FLY) //right
-        {
-
-            transform.rotation = Quaternion.SlerpUnclamped(transform.rotation, Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, -40), 2 * Time.deltaTime);
-        } //right
-        else //nothing
-        {
-            transform.rotation = Quaternion.SlerpUnclamped(transform.rotation, Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, 0), 2 * Time.deltaTime);
-        } //nothing
-
-        if (Input.GetKey(KeyCode.UpArrow) && GLIDER_FLY)
-        {
-
-            transform.rotation = Quaternion.SlerpUnclamped(transform.rotation, Quaternion.Euler(25, transform.eulerAngles.y, transform.eulerAngles.z), 2 * Time.deltaTime);
-
-            rb.AddForce(Vector3.down * 8000 * Time.deltaTime, ForceMode.Acceleration);
-        } //moving down
-        else if (Input.GetKey(KeyCode.DownArrow) && GLIDER_FLY)
-        {
-            transform.rotation = Quaternion.SlerpUnclamped(transform.rotation, Quaternion.Euler(-25, transform.eulerAngles.y, transform.eulerAngles.z), 2 * Time.deltaTime);
-            rb.AddForce(Vector3.up * 4000 * Time.deltaTime, ForceMode.Acceleration);
-
-        } //rotating up - only use this if you have special triggers around the track which disable this functionality at some point, or the player will be able to just fly around the track the whole time
-        else
-        {
-            transform.rotation = Quaternion.SlerpUnclamped(transform.rotation, Quaternion.Euler(0, transform.eulerAngles.y, transform.eulerAngles.z), 2 * Time.deltaTime);
-        }
-
-
-
-
-
-
-
+        transform.rotation = Quaternion.SlerpUnclamped(transform.rotation, Quaternion.Euler(0, transform.eulerAngles.y, transform.eulerAngles.z), 2 * Time.deltaTime);
 
         steerDirVect = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + steerAmount, transform.eulerAngles.z);
         transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, steerDirVect, 3 * Time.deltaTime);
@@ -372,46 +337,49 @@ public class PlayerScript : MonoBehaviour
 
     private void tireSteer()
     {
+
         
         if (steerDirection < 0)
         {
-           frontLeftTire.localEulerAngles = Vector3.Lerp(frontLeftTire.localEulerAngles, new Vector3(frontLeftTire.localEulerAngles.x, 155, 0), 5 * Time.deltaTime);
-           frontRightTire.localEulerAngles = Vector3.Lerp(frontLeftTire.localEulerAngles, new Vector3(frontRightTire.localEulerAngles.x, 155, 0), 5 * Time.deltaTime);
+            frontLeftTire.localEulerAngles = Vector3.Lerp(frontLeftTire.localEulerAngles, new Vector3(0, 155, 0), 5 * Time.deltaTime);
+            frontRightTire.localEulerAngles = Vector3.Lerp(frontLeftTire.localEulerAngles, new Vector3(0, 155, 0), 5 * Time.deltaTime);
         }
         else if (steerDirection > 0)
         {
             frontLeftTire.localEulerAngles = Vector3.Lerp(frontLeftTire.localEulerAngles, new Vector3(0, 205, 0), 5 * Time.deltaTime);
             frontRightTire.localEulerAngles = Vector3.Lerp(frontLeftTire.localEulerAngles, new Vector3(0, 205, 0), 5 * Time.deltaTime);
         }
-        
+
         else
         {
             frontLeftTire.localEulerAngles = Vector3.Lerp(frontLeftTire.localEulerAngles, new Vector3(0, 180, 0), 5 * Time.deltaTime);
-            frontRightTire.localEulerAngles = Vector3.Lerp(frontRightTire.localEulerAngles, new Vector3(frontRightTire.localEulerAngles.x, 180, frontRightTire.localEulerAngles.z), 5 * Time.deltaTime);
+            frontRightTire.localEulerAngles = Vector3.Lerp(frontRightTire.localEulerAngles, new Vector3(0, 180, 0), 5 * Time.deltaTime);
         }
         
-
+       
         //tire spinning
         
         if (CurrentSpeed > 30)
         {
-           frontLeftTire.Rotate(-90 * Time.deltaTime * CurrentSpeed * 0.5f, 0, 0);
-          // frontRightTire.GetChild(0).Rotate(-90 * Time.deltaTime * CurrentSpeed * 0.5f, 0, 0);
-        //   backLeftTire.Rotate(90 * Time.deltaTime * CurrentSpeed * 0.5f, 0, 0);
-         //  backRightTire.Rotate(90 * Time.deltaTime * CurrentSpeed * 0.5f, 0, 0);
+            frontLeftTire.Rotate(new Vector3(-90 * Time.deltaTime * CurrentSpeed * 0.5f, 0, 0),Space.World);
+             frontRightTire.Rotate(-90 * Time.deltaTime * CurrentSpeed * 0.5f, 0, 0);
+               backLeftTire.Rotate(90 * Time.deltaTime * CurrentSpeed * 0.5f, 0, 0);
+              backRightTire.Rotate(90 * Time.deltaTime * CurrentSpeed * 0.5f, 0, 0);
+
+            
         }
         else
         {
-           // frontLeftTire.GetChild(0).Rotate(-90 * Time.deltaTime * RealSpeed * 0.5f, 0, 0);
-            frontLeftTire.Rotate(-90 * Time.deltaTime * RealSpeed * 0.5f, 0, 0);
+            // frontLeftTire.GetChild(0).Rotate(-90 * Time.deltaTime * RealSpeed * 0.5f, 0, 0);
+            frontLeftTire.Rotate(new Vector3(-90 * Time.deltaTime * RealSpeed * 0.5f, 0, 0),Space.World);
             //frontRightTire.GetChild(0).Rotate(-90 * Time.deltaTime * RealSpeed * 0.5f, 0, 0);
             //backLeftTire.Rotate(90 * Time.deltaTime * RealSpeed * 0.5f, 0, 0);
             //backRightTire.Rotate(90 * Time.deltaTime * RealSpeed * 0.5f, 0, 0);
         }
         
-
+        
 
     }
 
-    
+
 }
