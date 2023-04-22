@@ -375,18 +375,18 @@ public class PlayerScript : MonoBehaviour
         
         if (steerDirection < 0)
         {
-           frontLeftTire.localEulerAngles = Vector3.Lerp(frontLeftTire.localEulerAngles, new Vector3(0, 155, 900), 5 * Time.deltaTime);
-           frontRightTire.localEulerAngles = Vector3.Lerp(frontLeftTire.localEulerAngles, new Vector3(frontRightTire.localEulerAngles.x, 155, 900), 5 * Time.deltaTime);
+           frontLeftTire.localEulerAngles = Vector3.Lerp(frontLeftTire.localEulerAngles, new Vector3(frontLeftTire.localEulerAngles.x, 155, 0), 5 * Time.deltaTime);
+           frontRightTire.localEulerAngles = Vector3.Lerp(frontLeftTire.localEulerAngles, new Vector3(frontRightTire.localEulerAngles.x, 155, 0), 5 * Time.deltaTime);
         }
         else if (steerDirection > 0)
         {
-            frontLeftTire.localEulerAngles = Vector3.Lerp(frontLeftTire.localEulerAngles, new Vector3(0, 205, 900), 5 * Time.deltaTime);
-            frontRightTire.localEulerAngles = Vector3.Lerp(frontLeftTire.localEulerAngles, new Vector3(0, 205, 900), 5 * Time.deltaTime);
+            frontLeftTire.localEulerAngles = Vector3.Lerp(frontLeftTire.localEulerAngles, new Vector3(0, 205, 0), 5 * Time.deltaTime);
+            frontRightTire.localEulerAngles = Vector3.Lerp(frontLeftTire.localEulerAngles, new Vector3(0, 205, 0), 5 * Time.deltaTime);
         }
         
         else
         {
-            frontLeftTire.localEulerAngles = Vector3.Lerp(frontLeftTire.localEulerAngles, new Vector3(0, 180, 900), 5 * Time.deltaTime);
+            frontLeftTire.localEulerAngles = Vector3.Lerp(frontLeftTire.localEulerAngles, new Vector3(0, 180, 0), 5 * Time.deltaTime);
             frontRightTire.localEulerAngles = Vector3.Lerp(frontRightTire.localEulerAngles, new Vector3(frontRightTire.localEulerAngles.x, 180, frontRightTire.localEulerAngles.z), 5 * Time.deltaTime);
         }
         
