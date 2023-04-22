@@ -75,7 +75,7 @@ public class PlayerScript : MonoBehaviour
     {
         move();
        tireSteer();
-       // steer();
+       steer();
         /*
         groundNormalRotation();
         drift();
@@ -392,10 +392,10 @@ public class PlayerScript : MonoBehaviour
         
 
         //tire spinning
-        /*
+        
         if (CurrentSpeed > 30)
         {
-           frontLeftTire.GetChild(0).Rotate(-90 * Time.deltaTime * CurrentSpeed * 0.5f, 0, 0);
+           frontLeftTire.Rotate(-90 * Time.deltaTime * CurrentSpeed * 0.5f, 0, 0);
           // frontRightTire.GetChild(0).Rotate(-90 * Time.deltaTime * CurrentSpeed * 0.5f, 0, 0);
         //   backLeftTire.Rotate(90 * Time.deltaTime * CurrentSpeed * 0.5f, 0, 0);
          //  backRightTire.Rotate(90 * Time.deltaTime * CurrentSpeed * 0.5f, 0, 0);
@@ -403,12 +403,12 @@ public class PlayerScript : MonoBehaviour
         else
         {
            // frontLeftTire.GetChild(0).Rotate(-90 * Time.deltaTime * RealSpeed * 0.5f, 0, 0);
-            frontLeftTire.GetChild(0).Rotate(0, -90 * Time.deltaTime * RealSpeed * 0.5f, transform.rotation.z);
+            frontLeftTire.Rotate(-90 * Time.deltaTime * RealSpeed * 0.5f, 0, 0);
             //frontRightTire.GetChild(0).Rotate(-90 * Time.deltaTime * RealSpeed * 0.5f, 0, 0);
             //backLeftTire.Rotate(90 * Time.deltaTime * RealSpeed * 0.5f, 0, 0);
             //backRightTire.Rotate(90 * Time.deltaTime * RealSpeed * 0.5f, 0, 0);
         }
-        */
+        
 
 
     }
